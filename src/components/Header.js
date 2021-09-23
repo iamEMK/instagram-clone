@@ -8,6 +8,7 @@ import msg from "../components/images/msg.png"
 import heart from "../components/images/heart.png"
 import { Link, useHistory } from "react-router-dom"
 import Login from "./Login";
+import Avatar from "@material-ui/core/Avatar";
 
 function Header() {
 
@@ -52,19 +53,31 @@ function Header() {
 export default Header
 
 const Headers = styled.div`
+position: sticky;
+top:0;
+left:0;
+right:0;
 user-select:none;
 display: flex;
 //border-bottom: 2px solid gray;
 box-shadow: 0px 0px 11px black;
 padding: 10px;
 //height: 70px;
+background: white;
 justify-content: space-evenly;
+@media (max-width: 480px) {
+  }
 `;
 const Nav = styled.div`
     margin-right: 10px;
     :hover{
             cursor: pointer;
         }
+        @media (max-width: 480px) {
+            img{
+                height:25px;
+            }
+  }
 `;
 const Input= styled.div`
 display: flex;
@@ -78,12 +91,16 @@ input{
     padding-left: 10px;
     outline: none;
     width: 100%;
+ 
 }
 img{
     object-fit: contain;
     height:30px;
 
 }
+@media (max-width: 480px) {
+           display:none;
+  }
 `;
 const Menus = styled.div`
     display: flex;
@@ -93,10 +110,16 @@ const Menus = styled.div`
     img{
         height: 30px;
         margin-left: 10px;
+        @media (max-width: 480px) {
+            height: 25px;
+  }
         :hover{
             cursor: pointer;
         }
     }
+    @media (max-width: 480px) {
+          gap:5px;
+  }
 `;
 const Loginlogo = styled.span`
         font-size: 16px;
